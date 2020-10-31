@@ -1,45 +1,57 @@
 const getNthElement = (index, array) => {
-  // your code here
+  return (array[index]);
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return (array.join());
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return (string.split(','));
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  return array.concat(element);
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
+  return array;
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  var result = numbers.map(String);
+  return result;
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  var result = strings.map(function(x){ return x.toUpperCase(); });
+  return result;
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  for (i=0; i < strings.length; i++) {
+    let splitString = strings[i].split(""); 
+    let reverseArray = splitString.reverse();
+    let joinArray = reverseArray.join("");
+    strings.splice(i, 1, joinArray);
+  }
+  return strings;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  let evenNumbers = numbers.filter(function(x){ return x % 2 === 0});
+  return evenNumbers;
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  let result = array;
+  result.splice(index, 1);
+  return result;
 };
 
 const elementsStartingWithAVowel = strings => {
@@ -47,11 +59,19 @@ const elementsStartingWithAVowel = strings => {
 };
 
 const removeSpaces = string => {
-  // your code here
+  string.split("");
+  for (var i = 0; i < string.length; i++) { 
+    if (stringSplit[i] === (" ")) {
+      string.splice(i, 1);
+    }
+  }
+  string.join("");
+  return string;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  var sum = numbers.reduce((total, amount) => total + amount);
+  return sum;
 };
 
 const sortByLastLetter = strings => {
@@ -74,4 +94,4 @@ module.exports = {
   removeSpaces,
   sumNumbers,
   sortByLastLetter
-};
+}
